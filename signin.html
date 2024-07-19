@@ -1,0 +1,80 @@
+<!-- <?php
+
+@include 'config.php';
+if (isset ($_POST['submit']))
+{
+
+//$name= mysqli_real_escape_string($conn,$_POST['name']);
+$email= mysqli_real_escape_string($conn,$_POST['email']);
+$pass= md5($_POST['password']);
+//$cpass= md5($_POST['cpassword']);
+
+$select="SELECT * FROM user_data WHERE email='$email' && password ='$pass' ";
+
+//$result = mysqli_querry($conn,$select);
+
+
+$insert ="INSERT INTO user_data (email,password) VALUES('$email','$pass')";
+           // mysqli_querry($conn,$insert);
+            header('location:index2.html');
+
+// if(mysqli_num_rows($result) > 0)
+// {
+//     $error[] = 'User Already exists!';
+
+// }
+// else
+// {
+//     if($pass != $cpass)
+//     {
+//         $error[] = 'password not match!';
+//     }else
+//     {
+//         $insert ="INSERT INTO user_data (name,email,password) VALUES(' $name','$email','$pass')";
+//         mysqli_querry($conn,$insert);
+//         header('location:signin.php');
+//     }    
+// }
+};
+
+?> -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/5007b9356d.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="index2.html" method="post">
+                <h3>Sign In</h3>
+                <!-- <input type="text" name ="name" required placeholder="name"><br> -->
+                <input type="email" name ="email" required placeholder="email"><br>
+                <input type="password" name ="password" required placeholder="password"><br>
+                <!-- <input type="password" name ="cpassword" required placeholder="confirm password"><br> -->
+
+                <div class="btn-field">
+                <button type="submit" name="submit" value="sign up" class="form-btn">sign In</button><br>
+                </div>
+                <p>Don't have an Account<a href="signup.html">Click here!</a></p>
+
+
+
+
+            </form>
+        </div>                
+               
+    </body>
+</html>
